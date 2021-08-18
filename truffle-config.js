@@ -45,6 +45,7 @@ module.exports = {
       provider: function () {
         return new HDWalletProvider([privateKey], "https://rinkeby.infura.io/v3/72e71a4f135741c9861fda5ad3896e57");
       },
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
     },
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
