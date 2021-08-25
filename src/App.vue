@@ -293,7 +293,7 @@
       mint: async function() {
         if(this.mintAmount > 0 && this.mintAmount <= this.maxPurchase) {
           this.isMinting = true;
-          await this.contract.mint(this.mintAmount, this.account, {value: this.mintAmount * this.price * 1e18, from: this.account});
+          await this.contract.mint(this.mintAmount, this.account, {value: this.mintAmount * this.price * 1e18, type: '0x2'});
           this.loadData();
           this.isMinting = false;
           alert('Congratulations your mint is complete!');
