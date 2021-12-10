@@ -2,8 +2,13 @@
     <div class="box">
         <h2 class="title is-4 playfair">Token #{{id}}</h2>
         <figure class="image is-square" v-if="image">
-            <img :src="image">
+            <img :src="image" style="image-rendering: pixelated">
         </figure>
+        <br />
+        <div class="is-size-7" v-for="att in tokenJson.attributes" :key="att">
+            <label>{{att.trait_type}}: </label>
+            <strong>{{att.value}}</strong>
+        </div>
     </div>
 </template>
 
@@ -20,8 +25,6 @@
     watch: {
     },
     props: {
-      account: String,
-      contract: Object,
       id: Number
     },
     mounted: async function() {
@@ -29,7 +32,7 @@
     },
     methods: {
       loadToken: async function() {
-        this.tokenUrl = await this.contract.tokenURI(this.id);
+        this.tokenUrl = 'http://localhost:3000/json2/' + this.id;
         let response = await fetch(this.tokenUrl);
         this.tokenJson = await response.json();
         this.image = this.tokenJson.image;

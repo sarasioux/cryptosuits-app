@@ -12,6 +12,7 @@
     "@truffle/contract": "^4.3.30",
     "@truffle/hdwallet-provider": "^1.4.3",
     "core-js": "^3.6.5",
+    "ipfs-http-client": "^54.0.0",
     "vue": "^3.0.0",
     "web3": "^1.5.2"
   },
