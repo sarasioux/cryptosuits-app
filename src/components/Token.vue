@@ -32,7 +32,7 @@
     },
     methods: {
       loadToken: async function() {
-        this.tokenUrl = 'http://localhost:3000/json2/' + this.id;
+        this.tokenUrl = 'https://cryptosuits.herokuapp.com/json2/' + this.id;
         let response = await fetch(this.tokenUrl);
         this.tokenJson = await response.json();
         this.image = this.tokenJson.image;
